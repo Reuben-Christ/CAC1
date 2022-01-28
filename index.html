@@ -65,11 +65,37 @@
             box-shadow: 0 0 20px #eee;
             border-radius: 10px;
             display: block;
-            margin-left: 8vw;
-            margin-top: 2vw;
+            margin-left: 14vw;
+            margin-top: -4vw;
         }
 
         .btn-grad:hover {
+            background-position: right center;
+            /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .btn-grad1 {
+            background-image: linear-gradient(to right, #00d2ff 0%, #3a7bd5 51%, #00d2ff 100%)
+        }
+
+        .btn-grad1 {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin-left: 2vw;
+            margin-top: 2vw;
+        }
+
+        .btn-grad1:hover {
             background-position: right center;
             /* change the direction of the change here */
             color: #fff;
@@ -151,7 +177,8 @@
                 </label><br>
                 <textarea id="review" name="review" rows="4" cols="50">
        </textarea><br>
-                <button type="submit" class="btn-grad" name="submit" id="submit" onclick="empty()">SUBMIT</button>
+                 <input type="reset" id="reset" class="btn-grad1" value="RESET">
+                <button type="submit" class="btn-grad" name="submit" id="submit" onclick="empty()"> SUBMIT</button>
             </form>
         </div>
     </div>
@@ -175,28 +202,19 @@
     }
 
 
-    function checknm(element) {
-        let textInput = element.value;
-        textInput = textInput.replace(/[^A-Za-z ]*$/gm, "");
-        element.value = textInput;
-    }
-
     function empty(){
         var name = document.getElementById('name')
         var email1 = document.getElementById('email1')
         var psw1 = document.getElementById('psw1')
         var add = document.getElementById('add')
         
-        if (!name.value ||!add.value ||!email1.value || !psw1.value) {
+        if (!name.value||!add.value||!email1.value ||!psw1.value) {
             alert("Fill all fields!");
             return
         }
     }
+
     function validate() {
-          if (!name.value ||!add.value ||!email1.value || !psw1.value) {
-            alert("Fill all fields!");
-            return
-        }
         var psw1 = document.getElementById('psw1')
         var passR = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~`!@#$%^_+={}|:"<>,.?])[A-Za-z\d@$!%*?&]{8,}$/
         if (!passR.test(psw1.value)) {
