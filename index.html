@@ -193,6 +193,10 @@
         }
     }
     function validate() {
+          if (!name.value || !email1.value || !psw1.value || !add.value) {
+            alert("Fill all fields!");
+            return
+        }
         var psw1 = document.getElementById('psw1')
         var passR = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~`!@#$%^_+={}|:"<>,.?])[A-Za-z\d@$!%*?&]{8,}$/
         if (!passR.test(psw1.value)) {
